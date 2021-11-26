@@ -1,14 +1,22 @@
 import sys
 import random
-from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
 from PyQt5.QtGui import QPainter, QColor
 
 
-class MyWidget(QMainWindow):
+class Interface:
+
+    def __init__(self, widg):
+        widg.setGeometry(300, 300, 450, 450)
+        widg.setWindowTitle('circles')
+        widg.pushButton = QPushButton('Кнопка', widg)
+        widg.pushButton.setGeometry(10, 10, 50, 50)
+
+
+class MyWidget(QWidget):
     def __init__(self):
         super().__init__()
-        uic.loadUi('yellow-circles.ui', self)
+        Interface(self)
         self.pushButton.clicked.connect(self.run)
 
     def run(self):
