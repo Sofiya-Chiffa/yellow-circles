@@ -5,7 +5,6 @@ from PyQt5.QtGui import QPainter, QColor
 
 
 class Interface:
-
     def __init__(self, widg):
         widg.setGeometry(300, 300, 450, 450)
         widg.setWindowTitle('circles')
